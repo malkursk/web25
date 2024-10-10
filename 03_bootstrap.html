@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Bootstrap</title>
+</head>
+
+<style>
+    img,
+    div {
+        border-radius: 10px;
+    }
+
+    [data-tooltip] {
+        position: relative;
+    }
+
+    [data-tooltip]::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        background-color: white;
+        color: black;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    [data-tooltip]:hover::after {
+        padding: 5px;
+        opacity: 1;
+        top: 1em;
+        z-index: 100;
+    }
+</style>
+
+<body class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            Главное меню
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://mail.ru">На сайт mail.ru</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ya.ru">На сайт ya.ru</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="d-none d-lg-block col-3 bg-dark text-white p-3 border ">
+            <span class="badge text-bg-warning mt-3">Полицейский</span> — одна из самых важных и востребованных
+            профессий в любом государстве.
+            <img class="m-3" style="border-radius: 25px; width: 90%"
+                src="https://gtrk-kostroma.ru/upload/iblock/a68/a68b015b3e84c2dae99445ad0d7182ef.jpg">
+
+            <h5>Рассказываем об этой профессии</h5>
+            <div style="font-size: small;">
+                <li>
+                    Специализации В структуре МВД есть криминальная полиция и полиция общественной безопасности, которые
+                    имеют множество подразделений.
+                </li>
+                <li>
+                    В этих подразделениях работают представители разных полицейских профессий.
+                </li>
+                <li>
+                    Это тяжелая работа, сопряженная с риском, но я ее невероятно любил. К сожалению, по некоторым
+                    причинам
+                    мне
+                    пришлось повесить форму на гвоздь, но я до сих пор с восхищением вспоминаю годы своей работы в МВД.
+                </li>
+            </div>
+            <p class="m-4">
+                Этот блок пропадёт на малом разрешении
+            </p>
+        </div>
+        <div class="col-12 col-lg-9 text-center bg-secondary text-white p-3">
+            <h5>Практическая работа. Адаптивная верстка с применением Bootstrap</h5>
+            <h3 class="text-warning">Иванов Иван Иванович</h3>
+            <h6>группа: 44-23-999</h6>
+
+
+
+            <span data-tooltip="Основное хобби" class="badge text-bg-warning ">спорт</span>
+            <span data-tooltip="На это времени намного меньше" class="badge text-bg-warning">чтение книг</span>
+
+            <hr>
+            <h5>Список друзей</h5>
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>№ </th>
+                    <th>лучший друг</th>
+                    <th>email</th>
+                </tr>
+                <tr>
+                    <td>1 </td>
+                    <td>Сергеев Иван</td>
+                    <td>sergeev@mail123.ru</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Назарова София</td>
+                    <td>nazarova@mail123.ru</td>
+                </tr>
+                <td>3 </td>
+                <td>Кравцов Илья</td>
+                <td>kravcov@mail123.ru</td>
+                </tr>
+            </table>
+
+
+            <div class="row">
+                <div class="col-3">
+
+                </div>
+                <div class="col-6">
+                    <img src="https://kizlyar-kemz.ru/wp-content/uploads/2021/07/proizvoditel-vertoleta-ap55-kizlyar-kemz.jpg"
+                        style="width: 300px" usemap="#Navigation">
+                </div>
+                <p>*Нажмите на верхнюю лопасть или хвост чтобы узнать подробнее
+                </p>
+                <map name="Navigation">
+                    <area shape="circle" coords="150,25,25" target="_blank"
+                        href="https://kizlyar-kemz.ru/vertolyoty/vertolyoty.html" title="Верхние лопасти">
+                    <area shape="circle" coords="25,100,25" target="_blank"
+                        href="https://zoritabasarana.ru/rubriki/news/news/transport/item/27436-vertolet-ap-55-proizvedennyj-v-dagestane-uspeshno-proshel-ispytaniya/"
+                        title="Хвост">
+                </map>
+
+                <input class="form-control in-value" placeholder="введите название вертолёта"><br>
+                <button class="btn btn-outline-warning mt-1" onclick="myFunc()">Проверить</button>
+                <input class="form-control result mt-3 bg-warning" readonly="true"
+                    placeholder="тут будет Ваш ответ"></input>
+            </div>
+        </div>
+
+</body>
+<script>
+    function myFunc() {
+        const inputField = document.querySelector('.in-value');
+        const resultField = document.querySelector('.result');
+        res = !inputField.value ? 'еще не написан' : inputField.value
+        resultField.value = 'Ваш ответ: ' + res + ', правильный: вертолет АП-55';
+    }
+</script>
+
+</html>

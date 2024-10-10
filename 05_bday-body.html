@@ -1,0 +1,51 @@
+<!-- Вариант угадайки ДР с web-интерфейсом -->
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <title>Game</title>
+</head>
+
+<script>
+    const DD = 25; // число рождения
+    const MM = 5; // месяц рождения
+
+    const m = parseInt(document.querySelector("#monthValue").value)
+    const d = parseInt(document.querySelector("#dayValue").value)
+
+    let counter = 0; // количество попыток
+
+    function check() {
+
+        if ((m === MM) && (d === DD)) {
+            document.querySelector("#result").textContent = "Абсолютно верно"
+            counter = 0
+        } else {
+            counter++
+
+            document.querySelector(".count").textContent = "Попыток: " + counter
+
+            let hintM = m < MM ? "нужно больше" : m > MM ? "нужно меньше" : "угадано!"
+            let hintD = d < DD ? "нужно больше" : d > DD ? "нужно меньше" : "угадано!"
+
+            document.querySelector("#hintM").textContent = hintM
+            document.querySelector("#hintD").textContent = hintD
+        }
+    }
+</script>
+
+<body>
+    <h3>Меня зовут Анна, я учусь на ЦК в ЮЗГУ! Угадайте, когда у меня ДР</h3>
+    <span>число:</span><input id="dayValue" type="text">
+    <span id="hintD">Тут будет подсказка про число</span>
+    <br>
+    <span>месяц:</span> <input id="monthValue" type="text">
+    <span id="hintM">Тут будет подсказка про месяц</span>
+    <br>
+    <button onclick="check()">Проверить</button>
+    <p class="count">Попыток: 0 </p>
+    <p id="result">Тут будет результат</p>
+</body>
+
+</html>

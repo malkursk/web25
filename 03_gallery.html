@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML+FLEX+JS</title>
+</head>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    img {
+        border-radius: 10px;
+        width: 28%;
+        box-shadow: 0px 8px 8px rgba(50, 73, 203, 0.25);
+        transition: box-shadow 1s;
+        margin-bottom: 12px;
+    }
+
+    img:hover {
+        box-shadow: 0px 16px 20px rgba(12, 11, 11, 0.25);
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0px;
+    }
+
+    .imageContainer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+</style>
+
+<body>
+    <h1>Image Gallery</h1>
+
+    <div class="container">
+        <button id="refreshBtn">Refresh</button>
+        <button id="addBtn">Add</button>
+        <button id="removeBtn" disabled>Remove</button>
+        <div id="slider" class="imageContainer"></div>
+    </div>
+</body>
+<script>
+    let i = 1;
+
+    const sliderElement = document.getElementsByClassName("imageContainer")[0];
+    const refreshBtnElement = document.getElementById("refreshBtn");
+    const addBtnElement = document.getElementById("addBtn");
+    const removeBtnElement = document.getElementById("removeBtn");
+
+    function newPicture(index) {
+        const newImage = document.createElement("img");
+        newImage.src = "https://loremflickr.com/300/300/nature?random=" + index;
+        newImage.alt = "description_" + index;
+        sliderElement.appendChild(newImage);
+    }
+
+    addBtnElement.addEventListener("click", function () {
+        newPicture(i++);
+        removeBtnElement.disabled = false;
+    });
+
+    removeBtnElement.addEventListener("click", function () {
+        sliderElement.removeChild(sliderElement.lastChild);
+        if (sliderElement.children.length === 1) removeBtnElement.disabled = true;
+    });
+
+    refreshBtnElement.addEventListener("click", function () {
+        let count = sliderElement.children.length;
+        while (sliderElement.children.length > 0)
+            sliderElement.removeChild(sliderElement.lastChild);
+        for (j = 0; j < count; j++) newPicture(i++);
+        removeBtnElement.disabled = count === 1;
+    });
+
+    newPicture(i++);
+</script>
+
+</html>
