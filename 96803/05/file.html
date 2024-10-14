@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Файл №1</title>
+</head>
+<body>
+    <h4>Преобразование из одной системы счисления в другую</h4>
+    из 10 в 30
+    <br>
+    Исходное число:
+    <input value="0" class="in-component">
+    <br>
+    Результат:
+    <input class="out-component" value="результат" readonly>
+    <br>
+    <button class="convert-button">Конвертировать</button>
+    <script>
+        document.querySelector('.convert-button').addEventListener('click',onButtonClick);
+        function convert(number,inS,outS){
+            return parseInt(number,inS).toString(outS).toUpperCase();
+        }
+        function onButtonClick(){
+            const inNumber=document.querySelector ('.in-component').value;
+            result=convert (inNumber,10,30);
+            document.querySelector('.out-component').value=result;
+        }
+    </script>
+</body>
+</html>
