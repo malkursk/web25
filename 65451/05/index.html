@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRIK</title>
+</head>
+<body>
+ <h4>Преобразования из одной системы исчисления в другую</h4>
+ из 10 в 26
+ <br>
+ Исходное число:
+ <input value="0" class="in-component">
+ <br>
+ Результат
+<input class="out-component" value="результат" readonly>
+<br>
+<button class="convert-button">преобразить</button>
+<script>
+    document.querySelector('.convert-button').addEventListener('click',onButtonClik);
+    function convert(number, inS, outS) {
+        return parseInt(number, inS).toString(outS).toUpperCase();
+    }
+    function onButtonClik() {
+        const inNumber=document.querySelector('.in-component').value;
+        result=convert(inNumber, 10, 26);
+        document.querySelector('.out-component').value=result;
+        }
+</script> 
+</body>
+</html>
