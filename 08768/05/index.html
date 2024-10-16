@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>пр.5</title>
+</head>
+<body>
+    <h3>Pr.5</h3>
+    8 - 24
+    Исходное число:
+    <input value="0" class="in-component">
+    <br>
+    Полученное число: 
+    <input class="out-component" value="результат" readonly>
+    <button class="convert-button">конвертировать</button>
+    <script>
+        document.querySelector('.convert-button').addEventListener('click',onButtonClick);
+        function convert(number,inS,outS) {
+            return parseInt(number,inS).toString(outS).toUpperCase();
+        }
+        function onButtonClick(){
+            const inNumber=document.querySelector('.in-component').value;
+            result=convert(inNumber,8,24);
+            document.querySelector('.out-component').value=result;
+        }
+    </script>
+</body>
+</html>
