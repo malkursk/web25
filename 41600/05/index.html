@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Практическая работа 5</title>
+</head>
+<body>
+    <h3>Перевод из одной системы счисления в другую</h3>
+7чная в 21чную
+<br>
+Исходное число:
+<input value="0" class="in-component">
+<br>
+Полученное число:
+<input class="out-component" value="результат" readonly>
+<button class="convert-button"> Преобразовать </button>
+<script>
+    document.querySelector('.convert-button').addEventListener('click',onButtonClick);
+    function convert (number,inS,outS) {
+        return parseInt(number,inS).toString(outS).toUpperCase();
+    }
+    function onButtonClick () {
+        const inNumber=document.querySelector('.in-component').value;
+        result=convert(inNumber,7,21);
+        document.querySelector('.out-component').value=result;
+}
+</script>
+</body>
+</html>
