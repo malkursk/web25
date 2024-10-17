@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const MM = 1; // месяц рождения
+    const DD = 28; // число рождения 
+    let counter = 0; // количество попыток
+    let superCounter = 6; // порог супер-угадывателя
+    
+    alert ("Игра: угадай когда родился автор, начинаем!")
+    
+    let m = prompt("Введите мой месяц рождения (1-12)")
+    
+    while (Number(m) !== MM){
+        counter++;
+        if (Number(m) > MM)
+            m = prompt ("Мой месяц раньше, чем " + m + ", повторите ввод")
+        else
+            m = prompt ("Мой месяц позже, чем " + m + " , повторите ввод")
+    }
+    
+    let d = prompt("Введите число месяца (1-31)")
+    while (Number(d) !== DD){
+        counter++;
+        if (Numberd(d) > DD)
+            d = prompt ("Моё число раньше, чем" + d + ", повторите ввод")
+        else
+            d - prompt ("Моё число позже, чем " + d + ", повторите ввод")
+    }
+    
+    if (counter <= superCounter)
+        alert("Вы достигли уровня супер-угадыватель")
+    else
+        alert("Вы победили, использовано попыток: " + counter)
+</script>
+
+<body>
+</body>
+
+</html>
