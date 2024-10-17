@@ -1,0 +1,71 @@
+.txt-center {
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(38, 83, 150);
+    font-weight: bold; /* Сделаем текст жирным */
+}
+
+.txt-under {
+    text-decoration: underline;
+    color: #555; /* Сделаем цвет немного мягче */
+}
+
+/* Внешние границы таблицы серого цвета толщиной 1px */
+table {
+    border: 1px solid rgb(53, 40, 54);
+    border-collapse: collapse; /* Убираем двойные границы */
+    
+}
+
+/* Границы ячеек первого ряда таблицы */
+th {
+    border: 1px solid rgb(7, 11, 65);
+    background-color: rgb(230, 230, 250); /* Добавляем фоновый цвет */
+    padding: 10px; /* Добавляем отступы */
+}
+
+/* Границы ячеек тела таблицы */
+td {
+    border: 0.5px solid rgb(53, 53, 58);
+    padding: 8px; /* Добавляем отступы для содержимого ячеек */
+    background-color: #f9f9f9; /* Мягкий фоновый цвет */
+}
+
+.txt-purple {
+    color: purple;
+    text-align: left;
+    font-style: italic; /* Делаем текст курсивом */
+}
+
+.txt-green {
+    color: green;
+    text-align: left;
+    font-weight: bold; /* Жирный текст */
+}
+
+.txt-blue {
+    color: blue;
+    text-align: left;
+}
+
+.txt-pink {
+    color: pink;
+    text-align: left;
+}
+
+.txt-red {
+    color: red;
+    text-align: left;
+    text-transform: uppercase; /* Делаем текст заглавными буквами */
+}
+
+.txt-burlywood {
+    color: rgb(38, 83, 150);
+    text-align: left;
+}
+
+.txt-grey {
+    color: rgb(69, 10, 71);
+    text-align: left;
+    font-weight: lighter; /* Легкий текст */
+}
