@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="styles.css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!— Bootstrap CSS —>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+
+<!— Bootstrap Font Icon CSS —>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+</head>
+<html>
+<head>
+<style>
+h1 {color: rgba(89, 0, 124, 0.986);}
+p {color: rgb(121, 44, 131);}
+</style>
+</head>
+<body>
+<body>
+<h1>Практическая работа 02</h1>
+<div>
+<h3 class="m-4">
+<i class="bi bi-spotify"></i> <!— Иконка Spotify —>
+<i class="bi bi-pinterest"></i> <!— Иконка Pinterest —>
+<i class="bi bi-steam"></i> <!— Иконка Steam —>
+</h3>
+
+<h3>хобби: слушать музыку, играть в игры, смотреть тикток, манга, аниме</h3>
+<p>
+teammates? friends? the hell with that?
+</p>
+<table id="imageTable">
+<tr>
+    <td><img id="img1" width="200" height="200" /></td>
+    <td><img id="img2" width="200" height="200" /></td>
+</tr>
+<tr>
+    <td><img id="img3" width="200" height="200" /></td>
+    <td><img id="img4" width="200" height="200" /></td>
+</tr>
+</table>
+<div class="flexContainer">
+<p>21.07</p>
+<input />
+
+<button onClick="window.location.reload();">refresh</button>
+</div>
+</div>
+
+<div class="authorContainer">
+44-24-230 <strong>Vladimirova Anastasia</strong>
+</div>
+
+<script>
+    // Array of image URLs
+    const images = [
+        "https://i.pinimg.com/enabled/564x/1d/41/aa/1d41aaa14782fb1b0345bb26f512669a.jpg",
+        "https://i.pinimg.com/enabled/564x/37/fd/9c/37fd9c1ed42dd6f897ce1225e3534a02.jpg",
+        "https://i.pinimg.com/736x/a5/11/a2/a511a27d3cfa8c3ecd4f5453537f7502.jpg",
+        "https://i.pinimg.com/564x/07/6f/f5/076ff50e51ca833fdbd830ce7b0cd525.jpg",
+        "https://i.pinimg.com/736x/54/72/ef/5472ef844fd7d4ca9ea53193729c16eb.jpg",
+        "https://i.pinimg.com/736x/bb/29/3b/bb293b94f709b933c3c19228ccb713b8.jpg",
+        "https://i.pinimg.com/enabled/564x/30/5b/2e/305b2eb64918d1872f6956916ecf072d.jpg",
+        "https://i.pinimg.com/originals/11/c2/43/11c2435147f4a6e97ad12174046aa69a.jpg",
+        "https://i.pinimg.com/originals/2a/33/77/2a3377e7808ab5a6922124c8b95a8543.jpg",
+        "https://i.pinimg.com/originals/21/4d/15/214d15d998721d9ffdcb7b27ecc5a487.png",
+        "https://i.pinimg.com/736x/1a/68/86/1a68866815ee4c1b46d8601c10c9a3bc.jpg",
+        "https://i.pinimg.com/enabled/564x/75/52/92/755292091b40a0c066b16772d60056fb.jpg",
+        "https://i.pinimg.com/736x/e5/99/6e/e5996e9af04c28fb6f95990fc9dc5835.jpg",
+        "https://i.pinimg.com/enabled/564x/52/59/8c/52598c8cb5308b88088a547f58af75b8.jpg",
+        "https://i.pinimg.com/enabled/564x/98/86/1f/98861f8ae98121d9b1ad66b217b756fc.jpg"
+    ];
+
+    // Function to select 4 random images and set them to the image elements
+    function displayRandomImages() {
+        const selectedImages = images.sort(() => 0.5 - Math.random()).slice(0, 4);
+        document.getElementById('img1').src = selectedImages[0];
+        document.getElementById('img2').src = selectedImages[1];
+        document.getElementById('img3').src = selectedImages[2];
+        document.getElementById('img4').src = selectedImages[3];
+    }
+
+    // Call the function on page load
+    window.onload = displayRandomImages;
+</script>
+
+</body>
+</html>
