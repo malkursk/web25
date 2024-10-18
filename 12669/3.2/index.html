@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const MM=9
+    const DD=23
+    
+    let counter = 0
+
+    let m = prompt("Введите мой месяц рождения (1-12)")
+    while(Number (m)!==MM){
+        counter++
+        if (Number (m)> (MM))
+        m = prompt("Мой месяц рождения раньше. Повторите ввод (1-"+(Number(m)-1)+")")
+else 
+  m = prompt("Мой месяц рождения позже . Повторите ввод ("+(Number(m)+1)+"-12)")
+    }
+    alert("Абсолютно верно!")
+     
+        let d = prompt("Введите число моего месяца рождения (1-31)")
+        while(Number(d)!==DD){
+            counter++
+        if (Number (d)> (DD))
+        d= prompt("Число моего месяца  рождения раньше. Повторите ввод (1-"+(Number(d)-1)+")")
+else 
+  d = prompt("Число моего месяца рождения позже . Повторите ввод ("+(Number(d)+1)+"-31)")
+    }
+    alert("Молодец! Победа, шагов" + counter)
+</script>
+<body>
+    
+</body>
+</html>
