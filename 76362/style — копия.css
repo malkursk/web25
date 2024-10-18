@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif; /* Устанавливаем общий шрифт для всего тела */
+    background-color: #f7f9fc; /* Фоновый цвет для страницы */
+    color: #333; /* Цвет основного текста */
+}
+
+.txt-center {
+    text-align: center;
+    text-decoration: underline;
+    color: #4a90e2; /* Новый цвет заголовка */
+    font-weight: bold;
+}
+
+.txt-under {
+    text-decoration: underline;
+    color: #666; /* Более мягкий цвет */
+}
+
+/* Убираем рамки у таблицы */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Границы ячеек первого ряда таблицы */
+th {
+    background-color: #dfe6e9; /* Новый фоновый цвет */
+    padding: 12px; /* Отступы */
+}
+
+/* Ячейки таблицы без рамок */
+td {
+    padding: 10px;
+    background-color: #f0f4f8; /* Мягкий фоновый цвет */
+}
+
+.txt-purple {
+    color: #9b59b6; /* Новый цвет для фиолетового текста */
+}
+
+.txt-green {
+    color: #27ae60; /* Новый зеленый цвет */
+    font-weight: bold;
+}
+
+.txt-blue {
+    color: #2980b9; /* Новый синий цвет */
+}
+
+.txt-pink {
+    color: #ff6b81; /* Новый розовый цвет */
+}
+
+.txt-red {
+    color: #e74c3c; /* Новый красный цвет */
+    text-transform: uppercase;
+}
+
+.txt-burlywood {
+    color: #d35400; /* Новый цвет для текста */
+}
+
+.txt-grey {
+    color: #7f8c8d; /* Легкий серый цвет */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Новый цвет заголовка */
+}
+
+h3 {
+    color: #34495e; /* Новый цвет заголовка основного текста */
+}
+
+button {
+    background-color: #3498db; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Без границы */
+    padding: 10px 15px; /* Отступы */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Плавный переход */
+}
+
+button:hover {
+    background-color: #2980b9; /* Более темный цвет при наведении */
+}
