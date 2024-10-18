@@ -1,21 +1,16 @@
-
 *{
     margin: 0;
 }
 main{
-    padding: 20px 10px;
+    padding: 20px;
 }
 .head{
-    background: #3d5e1d;
+    background: #35784d;
     padding: 10px;
     text-align: left;
     color: white;
 }
-.hobby
-{
-    border: 1px solid #aa0303;
-    border-radius: 2px;
-}
+
 img{
     border-radius: 10px;
     margin: 10px;
@@ -24,34 +19,10 @@ img{
 img:hover {
     box-shadow: 0 0 15px #4a4646;
 }
-a{
-    color: #538c1d;
-}
-a:hover{
-    color: #aa0303;
-}
-.input-box{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.btn{
-    font-size: 16px;
-    color: white;
-    background: #538c1d;
-    border-radius: 5px;
-    padding: 5px 20px;
-    display: grid;
-    margin: 10px auto;
-}
-.btn:hover{
-    background: #aa0303;
-}
+
 footer{
     color: white;
-    background-color: #3d5e1d;
-    font-size: 16px;
-    padding: 30px;
-    text-align: center;
+    background: #35784d;
+    font-size: 18px;
+    padding: 20px;
 }
