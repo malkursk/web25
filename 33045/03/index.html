@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Указывает язык документа (английский) -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Устанавливает кодировку символов в UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Устанавливает параметры просмотра для мобильных устройств -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Задает совместимость с Internet Explorer -->
+    <title>HTML+FLEX+JS</title>
+    <!-- Заголовок страницы, который отображается на вкладке браузера -->
+  </head>
+  <style>
+    /* Определение стилей для элементов страницы */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Установка шрифта для всего документа */
+    }
+
+    img {
+      border-radius: 40px; /* Скругление углов изображений */
+      width: 26%; /* Ширина изображений 28% от родительского контейнера */
+      box-shadow: 0px 8px 8px rgba(50, 73, 203, 0.25); /* Настройка теней для изображений */
+      transition: box-shadow 1s; /* Плавный переход для теней при наведении */
+      margin-bottom: 12px; /* Отступ снизу у изображений */
+    }
+
+    img:hover {
+      box-shadow: 0px 16px 20px rgba(12, 11, 11, 0.25); /* Увеличение тени при наведении на изображение */
+    }
+
+    button {
+      padding: 8px 16px; /* Отступы для кнопок */
+    }
+
+    .buttonContainer {
+      display: flex; /* Использование Flexbox для выравнивания кнопок */
+      justify-content: center; /* Центрирование кнопок в контейнере */
+      margin: 30px 0px; /* Отступ сверху и снизу для контейнера кнопок */
+    }
+
+    .imageContainer {
+      margin-top: 20px; /* Отступ сверху для контейнера изображений */
+      display: flex; /* Использование Flexbox для выравнивания изображений */
+      justify-content: space-around; /* Распределение изображений по контейнеру */
+      flex-wrap: wrap; /* Позволяет изображениям переходить на новую строку при переполнении */
+    }
+  </style>
+
+  <body>
+    <h1>Image Gallery</h1>
+    <!-- Заголовок страницы -->
+
+    <div class="container">
+      <!-- Кнопки управления -->
+      <button id="refreshBtn">Refresh</button>
+      <!-- Кнопка для перезагрузки изображений -->
+      <button id="addBtn">Add</button>
+      <!-- Кнопка для добавления нового изображения -->
+      <button id="removeBtn" disabled>Remove</button>
+      <!-- Кнопка для удаления изображения, изначально отключена -->
+      <div id="slider" class="imageContainer"></div>
+      <!-- Контейнер для изображений -->
+    </div>
+  </body>
+  <script>
+    let i = 1; // Переменная для отслеживания индекса изображений
+
+    // Получение элементов со страницы
+    const sliderElement = document.getElementsByClassName("imageContainer")[0]; // Контейнер для изображений
+    const refreshBtnElement = document.getElementById("refreshBtn"); // Кнопка "Refresh"
+    const addBtnElement = document.getElementById("addBtn"); // Кнопка "Add"
+    const removeBtnElement = document.getElementById("removeBtn"); // Кнопка "Remove"
+
+    // Функция для создания нового изображения
+    function newPicture(index) {
+      const newImage = document.createElement("img"); // Создание нового элемента изображения
+      newImage.src = "https://loremflickr.com/300/300/car?random=" + index; // Установка URL для изображения
+      newImage.alt = "description_" + index; // Установка альтернативного текста для изображения
+      sliderElement.appendChild(newImage); // Добавление изображения в контейнер
+    }
+
+    // Добавление обработчика событий для кнопки "Add"
+    addBtnElement.addEventListener("click", function () {
+      newPicture(i++); // Создание нового изображения с текущим индексом i
+      removeBtnElement.disabled = false; // Включение кнопки "Remove"
+    });
+
+    // Добавление обработчика событий для кнопки "Remove"
+    removeBtnElement.addEventListener("click", function () {
+      sliderElement.removeChild(sliderElement.lastChild); // Удаление последнего изображения из контейнера
+      // Отключение кнопки "Remove", если в контейнере осталась только одно изображение
+      if (sliderElement.children.length === 1) removeBtnElement.disabled = true;
+    });
+
+    // Добавление обработчика событий для кнопки "Refresh"
+    refreshBtnElement.addEventListener("click", function () {
+      let count = sliderElement.children.length; // Сохранение количества изображений в контейнере
+      // Удаление всех изображений из контейнера
+      while (sliderElement.children.length > 0)
+        sliderElement.removeChild(sliderElement.lastChild);
+      // Добавление изображений обратно в контейнер
+      for (j = 0; j < count; j++) newPicture(i++);
+      // Отключение кнопки "Remove", если осталось всего одно изображение
+      removeBtnElement.disabled = count === 1;
+    });
+
+    newPicture(i++); // Создание первого изображения при загрузке страницы
+  </script>
+</html>
