@@ -1,0 +1,40 @@
+<!-- Вариант угадайки ДР в диалоговом режиме -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<script>
+    const DD = 2; // число рождения
+    const MM = 1; // месяц рождения
+    let counter = 0; // количество попыток
+
+    alert("Меня зовут Медведев Евгений, я учусь на ЦК в ЮЗГУ! Угадайте, когда у меня ДР")
+
+    let m = parseInt(prompt("Введите месяц рождения 1-12"))
+    while (m !== MM) {
+        counter++;
+        if (m > MM)
+            m = prompt("Мой месяц < " + m)
+        else
+            m = prompt("Мой месяц > " + m)
+    }
+
+    let d = parseInt(prompt("Введите число рождения 1-31"))
+    while (d !== DD) {
+        counter++;
+        if (d > DD)
+            d = prompt("Моё число < " + d)
+        else
+            d = prompt("Моё число > " + d)
+    }
+
+    if (counter <= 5)
+        alert("Поздравляю, Вы супер-угадыватель")
+    else
+        alert("Ура! Вы выиграли, использовано попыток: " + counter)
+</script>
+
+<body></body>
+
+</html>
