@@ -1,0 +1,40 @@
+<!-- Вариант угадайки дома и квартиры в диалоговом режиме -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<script>
+    const MM = 5; // номер дома
+    const DD = 177; // номер квартиры
+    let counter = 0; // количество попыток
+
+    alert("Меня зовут Пьяных Кристина, я учусь на ЦК в ЮЗГУ! Угадайте, какой у меня номер дома и квартиры.")
+
+    let m = parseInt(prompt("Введите номер дома 1-60"))
+    while (m !== MM) {
+        counter++;
+        if (m > MM)
+            m = prompt("Мой номер < " + m)
+        else
+            m = prompt("Мой номер > " + m)
+    }
+
+    let d = parseInt(prompt("Введите номер квартиры 100-200"))
+    while (d !== DD) {
+        counter++;
+        if (d > DD)
+            d = prompt("Мой номер < " + d)
+        else
+            d = prompt("Мой номер > " + d)
+    }
+
+    if (counter <= 5)
+        alert("Поздравляю, Вы большой молодец")
+    else
+        alert("Поздравляю! Вы выиграли, использовано попыток: " + counter)
+</script>
+
+<body></body>
+
+</html>
