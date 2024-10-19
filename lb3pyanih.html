@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>ПР3</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <style>
+        img,
+        div {
+            border-radius: 10px;
+        }
+        [data-tooltip] {
+            position: relative;
+        }
+        [data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            background-color: white;
+            color: black;
+            opacity: 0;
+            transition: 1s;
+        }
+        [data-tooltip]:hover::after {
+            padding: 5px;
+            opacity: 1;
+            top: 1em;
+            z-index: 100;
+        }
+    </style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://swsu.ru/">Домашняя страница универа</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="https://getbootstrap.com/docs/5.0/components/navbar/">Bootstrap</a>
+              <a class="nav-link" href="https://en.wikipedia.org/wiki/Chevrolet_Camaro">Chevrolet_Camaro</a>
+              <a class="nav-link" href="https://kupi-buket46.ru/">Доставка цветов</a>
+              
+        
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="col-12 col-lg-30 text-center bg-secondary text-white p-3">
+        <h5>Практическая работа. Адаптивная верстка с применением Bootstrap</h5> 
+        <h3 class="text-black">Пьяных Кристина Сергеевна</h3>
+        <h5>группа: 44-24-231</h5>
+        <table class="table table-dark table-striped">
+            <tr>
+                <th>Номер </th>
+                <th>Цветы</th>
+                <th>Цвет</th>
+            </tr>
+            <tr>
+                <td>1 </td>
+                <td>Роза</td>
+                <td>белый</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Пионы</td>
+                <td>красный</td>
+            </tr>
+            <td>3 </td>
+            <td>Ромашки</td>
+            <td>белый</td>
+            </tr>
+          </table>
+          <div class="row">
+            <div class="col-3">
+            </div>
+            <div class="col-6">
+                <img src="https://postila.ru/data/35/c9/c4/31/35c9c431d95e258318a20252c603ddc5feb288d5f9b31ac3a2ea23e4a2744eb4.jpg"
+                    style="width: 300px" usemap="#Navigation">
+            </div>
+            <p>Нажмите на нижний лепесток для того чтобы узнать подробнее.
+            </p>
+            <map name="Navigation">
+                <area shape="circle" coords="160,100,25" target="_blank"
+                    href="https://ru.ruwiki.ru/wiki/Роза" title="Роза - общая информация">
+            </map>
+            <input class="form-control in-value" placeholder="введите название цветка"><br>
+                <button class="btn text-white btn-outline-success mt-1" onclick="myFunc()">Ответ</button>
+                <input class="form-control result mt-3 bg-success" readonly="true"
+                    placeholder="Ваш ответ"></input>
+            </div>
+        </div>
+        </div>
+      <body>
+        <script>
+            function myFunc() {
+                const inputField = document.querySelector('.in-value');
+                const resultField = document.querySelector('.result');
+                res = !inputField.value ? 'ответ не введен' : inputField.value
+                resultField.value = 'Ваш ответ: ' + res + ', правильный: Роза';
+            }
+        </script>
+</html>      
