@@ -5,17 +5,19 @@
     <title>Grades</title>
 </head>
 <body>
-    <h1>Grades</h1>
+    <h1 style="color: brown;">Grades for {{ grades.first.student.name }}</h1>
     <table>
         <tr>
             <th>Subject</th>
             <th>Score</th>
+            <th>Teacher</th>
             <th>Date</th>
         </tr>
         {% for grade in grades %}
         <tr>
-            <td>{{ grade.subject }}</td>
+            <td>{{ grade.subject.name }}</td>
             <td>{{ grade.score }}</td>
+            <td>{{ grade.teacher.name }}</td>
             <td>{{ grade.date }}</td>
         </tr>
         {% endfor %}
