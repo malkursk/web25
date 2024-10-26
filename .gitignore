@@ -1,2 +1,3 @@
 django/.venv/
 *__*
+django/grades/migrations/0001_initial.py
