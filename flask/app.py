@@ -1,22 +1,36 @@
-# pip install Flask
-# flask --app app run --debug
-
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
+from models import db, Student, Result
+from forms import ResultForm
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///results.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'your_secret_key'  
 
-@app.route("/")
-def hello_world():
-    return "Привет!!!"
+db.init_app(app)
 
-@app.route("/1/<v>")
-def f1(v):
-    return render_template("/01/index.html", name=v)
 
-@app.route("/2")
-def f2():
-    return render_template("/02/index.html")
+with app.app_context():
+    db.create_all()
 
-@app.route("/calc/<int:a>/<int:b>")
-def fcalc(a,b):
-    return a+b
+@app.route('/')
+def index():
+    students = Student.query.all()
+    return render_template('index.html', students=students)
+
+@app.route('/add_result', methods=['GET', 'POST'])
+def add_result():
+    form = ResultForm()
+    if form.validate_on_submit():
+        new_result = Result(
+            subject=form.subject.data,
+            score=form.score.data,
+            student_id=form.student_id.data
+        )
+        db.session.add(new_result)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('add_result.html', form=form)
+
+if __name__ == '__main__':
+    app.run(debug=True)

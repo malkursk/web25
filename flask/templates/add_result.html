@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add Result</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.subject.label }}<br>
+        {{ form.subject(size=32) }}<br>
+        {% for error in form.subject.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.score.label }}<br>
+        {{ form.score() }}<br>
+        {% for error in form.score.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.student_id.label }}<br>
+        {{ form.student_id() }}<br>
+        {% for error in form.student_id.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

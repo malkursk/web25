@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Student Results</h1>
+<a href="{{ url_for('add_result') }}">Add Result</a>
+<ul>
+    {% for student in students %}
+        <li>{{ student.name }}: 
+            {% for result in student.results %}
+                {{ result.subject }} - {{ result.score }}
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
