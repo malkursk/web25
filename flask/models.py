@@ -2,13 +2,19 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class Student(db.Model):
+class Game(db.Model):
+    __tablename__ = 'games'
+    
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    results = db.relationship('Result', backref='student', lazy=True)
+    status = db.Column(db.String(10), nullable=False, default='in_progress')  # Возможные значения: 'in_progress', 'won', 'draw'
+    winner = db.Column(db.String(1), nullable=True)  # 'X', 'O' или None
+    moves = db.relationship('Move', backref='game', lazy=True)  # Все ходы игры
 
-class Result(db.Model):
+
+class Move(db.Model):
+    __tablename__ = 'moves'
+    
     id = db.Column(db.Integer, primary_key=True)
-    subject = db.Column(db.String(100), nullable=False)
-    score = db.Column(db.Float, nullable=False)
-    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)
+    game_id = db.Column(db.Integer, db.ForeignKey('games.id'), nullable=False)
+    player = db.Column(db.String(1), nullable=False)  # 'X' или 'O'
+    position = db.Column(db.Integer, nullable=False)  # Позиция от 1 до 9
