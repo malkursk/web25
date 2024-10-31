@@ -1,10 +1,17 @@
 # https://coderun.yandex.ru/selections/hr-tech-interview/problems/tree-height
 
-def main():
-    pass
+def main(s):
+    mas = list(map(int, s.split()))
+    ms = set(mas)
+    cnt = 0
+    for m in ms:
+        if mas.count(m)==1:
+            cnt+=1
+    return cnt
 
-if __name__ == '__main__':
-    main()
+# s = input()
+# s = "1 2 3 4 6 6 6"
+print(main(input()))
 
 # https://coderun.yandex.ru/selections/backend/problems/decrypt-message
 '''
