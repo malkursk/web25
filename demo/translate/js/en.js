@@ -1,7 +1,10 @@
 export default {
     translation: {
-      text: "hello world",
-      changeLang: "change language",
-    },
-  };
-  
+        text: "Welcome!",
+        name: "name:",
+        phone: "phone:",
+        inputName: "enter your name",
+        inputPhone: "enter your mobile",
+        changeLang: "change language",
+    }
+};

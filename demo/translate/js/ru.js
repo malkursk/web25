@@ -1,7 +1,11 @@
 export default {
     translation: {
-      text: "привет мир",
-      changeLang: "сменить язык",
+        text: "Добро пожаловать",
+        name: "имя:",
+        phone: "телефон:",
+        inputName: "введите Ваше имя",
+        inputPhone: "укажите Ваш телефон",
+        changeLang: "сменить язык",
     },
-  };
+}
   
