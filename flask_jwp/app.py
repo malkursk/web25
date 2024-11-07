@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, g, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from functools import wraps
@@ -104,8 +104,7 @@ with app.app_context():
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        token = request.headers.get('Authorization')
-
+        token = request.headers.get('Authorization').split()[1]
         if not token:
             return jsonify({'error': 'Token is missing'}), 403
 
@@ -136,7 +135,7 @@ def login():
     if user:
         token = jwt.encode({
             'user_id': user.id,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+            'exp': datetime.datetime.now() + datetime.timedelta(hours=1)
         }, app.config['SECRET_KEY'], algorithm='HS256')
 
         return jsonify({'token': token}), 200

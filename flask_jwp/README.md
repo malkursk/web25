@@ -7,6 +7,9 @@ pip install flask_sqlalchemy - для работы с БД
 flask --app app run - запуск заготовки
 flask --app main run - запуск нашего проекта
 
+for /login Scripts -> Post-response (in Postman)
+var data = pm.response.json();
+pm.environment.set("token", data.token);
 
 ЗАДАНИЕ:
 
