@@ -3,3 +3,4 @@ django/.venv/
 django/grades/migrations/0001_initial.py
 *venv*
 flask/instance/results.db
+flask_jwp/instance/messages.db
