@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .success {
+        background: rgb(209, 223, 189);
+    }
+
+    .error {
+        background: rgb(202, 163, 163);
+    }
+
+</style>
+<body>
+    <p><b>ФИО/Имя</b> (символы кириллицы, дефис и пробел)</p>
+    <input id="fio" type="text" value="Иванов Сергей">
+
+    <br>
+
+    <p><b>Email</b> (только латинские буквы, цифры и
+        обязательно должны присутствовать символы «@» и «.»,
+        после которого менее 2-х символов)</p>
+    <input id="email" type="text" value="info@email.com">
+
+</body>
+<script>
+        
+    let fio_element = document.getElementById("fio")
+    var fio_re  = /^[А-ЯЁ][а-яё]+(?:[- ][А-ЯЁ][а-яё]+){0,2}$/
+    fio_element.addEventListener("focusout", () => {
+        fio_element.classList = fio_re.test(fio_element.value) ? "success" : "error"
+    })
+        
+    let email_element = document.getElementById("email")
+    var email_re  = /^[a-z0-9]+@[a-z0-9.]+\.[a-z]{2,}$/i
+    email_element.addEventListener("focusout", () => {
+        email_element.classList = email_re.test(email_element.value) ? "success" : "error"
+    })
+
+</script>
+
+</html>
