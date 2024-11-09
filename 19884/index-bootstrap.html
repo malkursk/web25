@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<style>
+    img,
+    div {
+        border-radius: 10px;
+    }
+
+    [data-tooltip] {
+        position: relative;
+    }
+
+    [data-tooltip]::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        background-color: white;
+        color: black;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    [data-tooltip]:hover::after {
+        padding: 5px;
+        opacity: 1;
+        top: 1em;
+        z-index: 100;
+    }
+    .bg-light-purple {
+        background-color: #b779e0; /* Светло-фиолетовый цвет */
+</style>
+
+<body class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            Главное меню
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://mail.ru">На сайт mail.ru</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ya.ru">На сайт ya.ru</a>
+                    </li>
+                    <li class="nav-itev">
+                        <a class="nav-link" href="https://vk.com/interdespise01">VK</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="d-none d-lg-block col-3 bg-dark text-white p-3 border ">
+            <span class="badge text-bg-warning mt-3">ЖИРАФ</span> —  самое высокое животное на планете Земля.
+            <img class="m-3" style="border-radius: 25px; width: 90%"
+                src="https://img.goodfon.com/original/2880x1800/5/89/zhiraf-zhirafy-mama-detenysh-malysh-zhirafik-oblaka-priroda.jpg">
+
+            <h5>НЕтипичные факты об этом животном</h5>
+            <div style="font-size: small;">
+                <li>
+                    Рисунок пятен каждого жирафа индивидуален, как отпечаток пальца человека.
+                </li>
+                <li>
+                    У жирафов самый длинный хвост среди млекопитающих — он доходит до 2,5 метров.
+                </li>
+                <li>
+                    Жирафы могут не пить воду в течение нескольких недель, получая необходимую организму влагу с растительной пищей.
+                </li>
+                <li>
+                    В среднем жираф спит 4–5 часов в день, а каждый цикл сна длится не больше 35 минут.
+                </li>
+            </div>
+            <p class="m-4">
+                Этот блок пропадёт на малом разрешении
+            </p>
+        </div>
+        <div class="col-12 col-lg-9 text-center bg-light-purple text-white p-3">
+            <h5>Практическая работа. Адаптивная верстка с применением Bootstrap</h5>
+            <h3 class="text-warning">Сошина Ксения Викторовна</h3>
+            <h6>группа: 44-23-232</h6>
+
+
+
+            <span data-tooltip="Основное хобби" class="badge text-bg-warning ">МОНТАЖ ВИДЕО</span>
+            <span data-tooltip="На это времени намного меньше" class="badge text-bg-warning">ПЕНИЕ</span>
+
+            <hr>
+            <h5>Список друзей</h5>
+            <table class="table table-striped table-dark">
+                <tr>
+                    <th>№ </th>
+                    <th>лучший друг</th>
+                    <th>email</th>
+                </tr>
+                <tr>
+                    <td>1 </td>
+                    <td>Щелкунов Кирилл</td>
+                    <td>krasavchik777@mail123.ru</td>
+                </tr>
+                <tr>
+                    <td>2 </td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3 </td>
+                    <td>Бажутина Галина</td>
+                    <td>galina44@mail123.ru</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <td>5 </td>
+                <td>Кудрявцева Екатерина</td>
+                <td>coolgirl777@mail123.ru</td>
+                </tr>
+            </table>
+
+
+            <div class="row">
+                <div class="col-3">
+
+                </div>
+                <div class="col-6">
+                    <img src="https://images.wallpaperscraft.com/image/single/yamaha_r1_red_99084_3840x2160.jpg"
+                        style="width: 300px" usemap="#Navigation">
+                </div>
+                <p>*Нажмите на одно из колес чтобы узнать что это
+                </p>
+                <map name="Navigation">
+                    <area shape="circle" coords="660,1102,1386,1896" target="_blank"
+                        href="https://images.wallpaperscraft.com/image/single/yamaha_r1_red_99084_3840x2160.jpg" title="колесо">
+                    
+                        <area shape="circle" coords="3170,2085,2342,1214" target="_blank"
+                        href="https://images.wallpaperscraft.com/image/single/yamaha_r1_red_99084_3840x2160.jpg" title="и это тоже">
+                </map>
+
+                <input class="form-control in-value" placeholder="введите название мотоцикла"><br>
+                <button class="btn btn-outline-light mt-1" onclick="myFunc()">Проверить</button>
+                <input class="form-control result mt-3 bg-warning" readonly="true"
+                    placeholder="тут будет Ваш ответ"></input>
+            </div>
+        </div>
+
+</body>
+<script>
+    function myFunc() {
+        const inputField = document.querySelector('.in-value');
+        const resultField = document.querySelector('.result');
+        res = !inputField.value ? 'еще не написан' : inputField.value
+        resultField.value = 'Ваш ответ: ' + res + ', правильный: Мотоцикл YAMAHA YZF-R1 ';
+    }
+</script>
+
+</html>
