@@ -1,0 +1,23 @@
+{% extends 'my/layout.html' %}
+
+{% block title %}Новости{% endblock%}
+
+{% block content %}
+    {% for d in data %}
+    <div class="card mt-3">
+        <h5 class="card-header"> {{ d.caption }}</h5>
+        <div class="card-body">
+          <p class="card-text"> {{ d.full_text }}</p>
+
+        </div>
+        <p class="card-text"><small class="text-muted"> Номер для связи: {{ d.phone_number }} </small></p>
+        <p class="card-text"><small class="text-muted"> Фамилия автора: {{ d.last_name }} </small></p>
+        <p class="card-text"><small class="text-muted"> Адрес: {{ d.address }} </small></p>
+        <div class="card-footer text-muted">
+            <a href="/preview/{{d.id}}">Подробнее...</a>
+        </div>
+      </div>
+    {% endfor %}
+{% endblock%}
+
+
