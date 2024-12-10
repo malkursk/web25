@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn"></button>
+    <p id="text"></p>
+</body>
+<script type="module">
+    import ru from "./js/ru.js";
+    import en from "./js/en.js";
+    const output = (err, t) => {
+        if (err) {
+            return console.log('something went wrong loading', err);
+        }
+        $('#btn').html(t('changeLang'));
+        $('#text').html(t('text'));
+    }
+    
+    i18next.init({
+            lng: 'en',
+            fallbackLng: ["en", "ru"],
+            debug: true,
+            resources: {
+                en,
+                ru,
+            },
+        }        
+    );
+    i18next.changeLanguage("en", output);
+
+    $("#btn").on("click", function () {
+        const lang = i18next.language === "en" ? "ru" : "en"
+        i18next.changeLanguage(lang, output);
+    });
+            
+</script>
+
+</html>
