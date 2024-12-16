@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>work 5</head>
+
+<body>
+    <h4>Программирование на javascript</h4>
+    19 -> 14
+    <hr>
+    <br>
+    Исходное число:
+    <input value="введите значение" class="in-component">
+    <br> 
+    <br> 
+    Результат:
+    <input class="out-component" value="скоро появится результат" readonly>
+    <button class="convert-button">Конвентировать !</button>
+    
+    <script>
+        document.querySelector('.convert-button').addEventListener('click', onButtonClick);
+
+        function convert(number, inS, outS) {
+            return parseInt(number, inS).toString(outS).toUpperCase();
+        }
+
+        function onButtonClick(){
+            const inNumber = document.querySelector('.in-component').value;
+            result = convert(inNumber, 19, 14);
+            document.querySelector('.out-component').value = result;
+        }
+    </script>
+    
+</body>
+</html>
