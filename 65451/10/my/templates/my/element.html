@@ -1,0 +1,21 @@
+{% extends 'my/layout.html' %}
+
+{% block title %}{{ title }}{% endblock%}
+
+{% block content %}
+{% if route %}
+<form method="POST" class="post-form" action="{{ route }}">
+    {% csrf_token %}
+    {{form.as_p }}
+    <center><button type="submit" class="btn btn-primary mt-2">Применить</button></center>
+</form>
+{% else %}
+    <h5>element {{ form.pk }}</h5>
+    {% for key, value in form.fields.items %}
+        <p>
+            <span class="col-2 badge bg-success">{{key}}</span>
+             {{ value }}</p>
+    {% endfor %}
+   
+{% endif %}    
+{% endblock%}
