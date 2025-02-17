@@ -1,0 +1,36 @@
+{% extends 'my/layout.html' %}
+
+{% block title %}Журнал{% endblock%}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Данные</th>
+            <th>Доступно</th>
+            <th>Актуальность</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in data %}
+        <tr>
+            <td>{{ d.id }}</td>
+            <td>{{ d.caption }}</td>
+            <td>{% if d.is_public %} Да {% else %} Нет {% endif %}</td>
+            <td>{{ d.updated_at}}</td>
+            <td>
+                <a href="/preview/{{d.id}}"><i class="fa-regular fa-eye"></i></i></a>
+                {% if user.is_authenticated  and user.is_superuser %}
+                <a href="/update/{{d.id}}"><i class="fa-regular fa-pen-to-square"></i></i></a>
+                <a href="/delete/{{d.id}}"><i class="fa-solid fa-trash"></i></a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}
+
+
