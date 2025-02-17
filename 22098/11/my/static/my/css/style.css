@@ -1,0 +1,38 @@
+body {
+    margin: 10px 0;
+    background-color: rgba(176, 120, 202, 0.726);
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    width: 100%;
+}
+
+th {
+    text-align: center;
+}
+
+input[type=checkbox] {
+    width: 20px;
+}
+
+
+aside {
+    float: left;
+    width: 20%;
+    background-color: rgb(238, 151, 181);
+}
+
+main {
+    padding-left: 5px;
+    width: 80%;
+    float: right;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+}
